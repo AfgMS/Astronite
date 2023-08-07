@@ -383,4 +383,5 @@ function Library:createTabs(parentFrame, tabName)
 
     return TAB
 end
+
 return Library
