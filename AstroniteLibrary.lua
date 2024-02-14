@@ -46,8 +46,8 @@ function Library:CreateImportantUI()
 	NavigationHolder.Name = "NavigationHolder"
 	NavigationHolder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	NavigationHolder.BackgroundTransparency = 1.000
-	NavigationHolder.Position = UDim2.new(0.037147101, 0, 0.136957541, 0)
-	NavigationHolder.Size = UDim2.new(0, 69, 0, 272)
+	NavigationHolder.Position = UDim2.new(0, 0, 0, 0)
+	NavigationHolder.Size = UDim2.new(0, 65, 1, 0)
 
 	local NavigationList = Instance.new("UIListLayout", NavigationHolder)
 	NavigationList.HorizontalAlignment = Enum.HorizontalAlignment.Center
@@ -62,7 +62,7 @@ function Library:CreateImportantUI()
 	MobileOpenUI.TextColor3 = Color3.fromRGB(153, 11, 255)
 	MobileOpenUI.Size = UDim2.new(0, 23, 0, 23)
 	MobileOpenUI.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	MobileOpenUI.Text = "+"
+	MobileOpenUI.Text = "?"
 	MobileOpenUI.Position = UDim2.new(0.963096738, 0, 0.351765305, 0)
 	MobileOpenUI.AutoButtonColor = false
 	
@@ -88,31 +88,27 @@ function Library:CreateImportantUI()
 	
 function Library:CreateNavigations(Name, Image)
 
-	local Navigation = Instance.new("TextButton", NavigationHolder)
-	Navigation.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-	Navigation.Position = UDim2.new(0.345454544, 0, 0.0795755982, 0)
+	local Navigation = Instance.new("ImageButton", NavigationHolder)
+	Navigation.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
+	Navigation.BackgroundTransparency = 1.000
+	Navigation.Position = UDim2.new(0, 0, 0, 0)
 	Navigation.Name = Name
 	Navigation.Size = UDim2.new(0, 40, 0, 40)
 	Navigation.AutoButtonColor = false
-	Navigation.Text = ""
-	
+	Navigation.ImageColor3 = Color3.fromRGB(255, 255, 255)
+	Navigation.Image = "rbxassetid://" .. tostring(Image)
+		
 	local NavigationCorner = Instance.new("UICorner", Navigation)
 	NavigationCorner.CornerRadius = UDim.new(1, 0)
-
-	local NavigationImage = Instance.new("ImageLabel", Navigation)
-	NavigationImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	NavigationImage.BackgroundTransparency = 1.000
-	NavigationImage.Position = UDim2.new(0.25, 0, 0.25, 0)
-	NavigationImage.Size = UDim2.new(0, 20, 0, 20)
-	NavigationImage.Image = Image
-	NavigationImage.ImageColor3 = Color3.fromRGB(20, 20, 20)
 		
 	local NavigationOnClick = false
 	Navigation.MouseButton1Click:Connect(function()
 		if NavigationOnClick then
 			Library:Tween(Navigation, {BackgroundColor3 = Color3.fromRGB(146, 226, 255)})
+			Navigation.ImageColor3 = Color3.fromRGB(20, 20, 20)
 		else
-			Library:Tween(Navigation, {BackgroundColor3 = Color3.fromRGB(20, 20, 20)})
+			Library:Tween(Navigation, {BackgroundColor3 = Color3.fromRGB(28, 28, 28)})
+			Navigation.ImageColor3 = Color3.fromRGB(255, 255, 255)
 		end
 	end)
 	
