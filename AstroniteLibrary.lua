@@ -93,7 +93,7 @@ function Library:CreateNavigations(Name, Image)
 	Navigation.BackgroundTransparency = 1.000
 	Navigation.Position = UDim2.new(0, 0, 0, 0)
 	Navigation.Name = Name
-	Navigation.Size = UDim2.new(0, 40, 0, 40)
+	Navigation.Size = UDim2.new(0, 30, 0, 30)
 	Navigation.AutoButtonColor = false
 	Navigation.ImageColor3 = Color3.fromRGB(255, 255, 255)
 	Navigation.Image = "rbxassetid://" .. tostring(Image)
