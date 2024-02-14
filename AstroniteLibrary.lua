@@ -97,8 +97,8 @@ function Library:CreateNavigations(Name, Image)
 	ButtonHolder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	ButtonHolder.BorderSizePixel = 0
 	ButtonHolder.Name = "Section" .. Name
-	ButtonHolder.Position = UDim2.new(0.5, 0, 0.5, 0)
-	ButtonHolder.Size = UDim2.new(0, 543, 0, 284)
+	ButtonHolder.Position = UDim2.new(0.5, 25, 0.5, 0)
+	ButtonHolder.Size = UDim2.new(0, 355, 0, 215)
 	ButtonHolder.ScrollBarThickness = 0
 	ButtonHolder.Visible = false
 	ButtonHolder.AnchorPoint = Vector2.new(0.5, 0.5)
