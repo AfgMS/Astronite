@@ -66,13 +66,6 @@ function Library:CreateImportantUI()
 	BlurVision.Size = 23
 	BlurVision.Enabled = false
 	
-	game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessedEvent)
-		if input.KeyCode == Enum.KeyCode.V and not gameProcessedEvent then
-			Panel.Visible = not Panel.Visible
-			BlurVision.Enabled = not BlurVision.Enabled
-		end
-	end)
-	
 function Library:CreateNavigations(Name, Image)
 
 	local Navigation = Instance.new("ImageButton", NavigationHolder)
@@ -91,6 +84,7 @@ function Library:CreateNavigations(Name, Image)
 	ButtonHolder.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
 	ButtonHolder.BorderSizePixel = 0
 	ButtonHolder.Name = "Section" .. Name
+	ButtonHolder.BackgroundTransparency = 1.000
 	ButtonHolder.Position = UDim2.new(0.5, 25, 0.5, 0)
 	ButtonHolder.Size = UDim2.new(0, 305, 0, 205)
 	ButtonHolder.ScrollBarThickness = 0
@@ -116,7 +110,14 @@ function Library:CreateNavigations(Name, Image)
 		end
 	end)
 
-		
+	game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessedEvent)
+	if input.KeyCode == Enum.KeyCode.V and not gameProcessedEvent then
+		Panel.Visible = not Panel.Visible
+		BlurVision.Enabled = not BlurVision.Enabled
+	if not ButtonHolder.Visible then
+		ButtonHolder.Visible = false
+		end
+	end)
 	local NavigationOnClick = false
 	Navigation.MouseButton1Click:Connect(function()
 		NavigationOnClick = not NavigationOnClick
