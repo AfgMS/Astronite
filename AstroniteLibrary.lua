@@ -37,7 +37,8 @@ function Library:CreateImportantUI()
 	Panel.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 	Panel.Position = UDim2.new(0.5, 0, 0.5, 0)
 	Panel.Size = UDim2.new(0, 675, 0, 360)
-
+	Panel.Visible = false
+	
 	local PanelCorner = Instance.new("UICorner", Panel)
 	PanelCorner.CornerRadius = UDim.new(0, 12)
 	
