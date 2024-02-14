@@ -36,11 +36,24 @@ function Library:CreateImportantUI()
 	Panel.AnchorPoint = Vector2.new(0.5, 0.5)
 	Panel.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 	Panel.Position = UDim2.new(0.5, 0, 0.5, 0)
-	Panel.Size = UDim2.new(0, 675, 0, 360)
+	Panel.Size = UDim2.new(0, 395, 0, 255)
 	Panel.Visible = false
 	
 	local PanelCorner = Instance.new("UICorner", Panel)
 	PanelCorner.CornerRadius = UDim.new(0, 12)
+
+	local NavigationHolder = Instance.new("Frame", Panel)
+	NavigationHolder.Name = "NavigationHolder"
+	NavigationHolder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	NavigationHolder.BackgroundTransparency = 1.000
+	NavigationHolder.Position = UDim2.new(0.037147101, 0, 0.136957541, 0)
+	NavigationHolder.Size = UDim2.new(0, 69, 0, 272)
+
+	local NavigationList = Instance.new("UIListLayout", NavigationHolder)
+	NavigationList.HorizontalAlignment = Enum.HorizontalAlignment.Center
+	NavigationList.SortOrder = Enum.SortOrder.LayoutOrder
+	NavigationList.VerticalAlignment = Enum.VerticalAlignment.Center
+	NavigationList.Padding = UDim.new(0, 15)
 	
 	local MobileOpenUI = Instance.new("TextButton", AstroniteScreenUI)
 	MobileOpenUI.BorderSizePixel = 0
@@ -52,6 +65,9 @@ function Library:CreateImportantUI()
 	MobileOpenUI.Text = "+"
 	MobileOpenUI.Position = UDim2.new(0.963096738, 0, 0.351765305, 0)
 	MobileOpenUI.AutoButtonColor = false
+	
+	local MobileOpenUICorner = Instance.new("UICorner", MobileOpenUI)
+	MobileOpenUICorner.CornerRadius = UDim.new(0, 8)
 	
 	local BlurVision = Instance.new("BlurEffect", Lighting)
 	BlurVision.Size = 23
@@ -72,26 +88,14 @@ function Library:CreateImportantUI()
 	
 function Library:CreateNavigations(Name, Image)
 
-	local NavigationHolder = Instance.new("Frame", Panel)
-	NavigationHolder.Name = "NavigationHolder"
-	NavigationHolder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	NavigationHolder.BackgroundTransparency = 1.000
-	NavigationHolder.Position = UDim2.new(0.037147101, 0, 0.136957541, 0)
-	NavigationHolder.Size = UDim2.new(0, 69, 0, 272)
-
-	local NavigationList = Instance.new("UIListLayout", NavigationHolder)
-	NavigationList.HorizontalAlignment = Enum.HorizontalAlignment.Center
-	NavigationList.SortOrder = Enum.SortOrder.LayoutOrder
-	NavigationList.VerticalAlignment = Enum.VerticalAlignment.Center
-	NavigationList.Padding = UDim.new(0, 15)
-
 	local Navigation = Instance.new("TextButton", NavigationHolder)
 	Navigation.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 	Navigation.Position = UDim2.new(0.345454544, 0, 0.0795755982, 0)
 	Navigation.Name = Name
 	Navigation.Size = UDim2.new(0, 40, 0, 40)
 	Navigation.AutoButtonColor = false
-
+	Navigation.Text = ""
+	
 	local NavigationCorner = Instance.new("UICorner", Navigation)
 	NavigationCorner.CornerRadius = UDim.new(1, 0)
 
