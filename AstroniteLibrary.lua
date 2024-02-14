@@ -81,8 +81,7 @@ function Library:CreateImportantUI()
 function Library:CreateNavigations(Name, Image)
 
 	local Navigation = Instance.new("ImageButton", NavigationHolder)
-	Navigation.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
-	Navigation.BackgroundTransparency = 1.000
+	Navigation.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 	Navigation.Position = UDim2.new(0, 0, 0, 0)
 	Navigation.Name = Name
 	Navigation.Size = UDim2.new(0, 30, 0, 30)
@@ -98,7 +97,7 @@ function Library:CreateNavigations(Name, Image)
 	ButtonHolder.BorderSizePixel = 0
 	ButtonHolder.Name = "Section" .. Name
 	ButtonHolder.Position = UDim2.new(0.5, 25, 0.5, 0)
-	ButtonHolder.Size = UDim2.new(0, 355, 0, 215)
+	ButtonHolder.Size = UDim2.new(0, 305, 0, 205)
 	ButtonHolder.ScrollBarThickness = 0
 	ButtonHolder.Visible = false
 	ButtonHolder.AnchorPoint = Vector2.new(0.5, 0.5)
