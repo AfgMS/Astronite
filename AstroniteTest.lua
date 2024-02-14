@@ -12,10 +12,7 @@ local NavigationsTest1 = Library:CreateNavigations("Gui", 12203817423)
 local NavigationsTest2 = Library:CreateNavigations("test", 12203817778)
 
 --Pages
-local Phase1 = NavigationsTest1:CustomNavigationSection("Yes")
-local Phase2 = NavigationsTest2:CustomNavigationSection("No")
-
-local Testing1 = Phase1:ToggleButton({
+local Testing1 = NavigationsTest1:ToggleButton({
     Name = "Hello",
     callback = function(enabled)
         if enabled then
@@ -48,7 +45,7 @@ local Sliders1 = Testing1:Slider({
         print("CurrentCum is now " .. val)
     end
 })
-local Testing2 = Phase1:ToggleButton({
+local Testing2 = NavigationsTest1:ToggleButton({
     Name = "YourWelcome",
     callback = function(enabled)
         if enabled then
@@ -59,7 +56,7 @@ local Testing2 = Phase1:ToggleButton({
     end
 })
 local testing2section = Testing2:TextLabel("HelloDude")
-local Phase2Test1 = Phase2:ToggleButton({
+local Phase2Test1 = NavigationsTest2:ToggleButton({
     Name = "Wassup",
     callback = function(enabled)
         if enabled then
@@ -70,7 +67,7 @@ local Phase2Test1 = Phase2:ToggleButton({
     end
 })
 local Phase2but1 = Phase2Test1:TextLabel("Im cming")
-local Phase2Test2 = Phase2:ToggleButton({
+local Phase2Test2 = NavigationsTest2:ToggleButton({
     Name = "Yno",
     callback = function(enabled)
         if enabled then
