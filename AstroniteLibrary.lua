@@ -16,13 +16,6 @@ function Library:validate(defaults, options)
 	end
 	return options
 end
-
-function Library:Tween(object, properties)
-	local tweenInfo = TweenInfo.new(properties.time or 0.10, properties.easingStyle or Enum.EasingStyle.Quad, properties.easingDirection or Enum.EasingDirection.Out)
-	local tween = TweenService:Create(object, tweenInfo, properties)
-	tween:Play()
-end
-
 --UILibrary
 function Library:CreateImportantUI()
 
@@ -100,25 +93,12 @@ function Library:CreateNavigations(Name, Image)
 		
 	local NavigationCorner = Instance.new("UICorner", Navigation)
 	NavigationCorner.CornerRadius = UDim.new(1, 0)
-		
-	local NavigationOnClick = false
-	Navigation.MouseButton1Click:Connect(function()
-		if NavigationOnClick then
-			Library:Tween(Navigation, {BackgroundColor3 = Color3.fromRGB(146, 226, 255)})
-			Navigation.ImageColor3 = Color3.fromRGB(20, 20, 20)
-		else
-			Library:Tween(Navigation, {BackgroundColor3 = Color3.fromRGB(28, 28, 28)})
-			Navigation.ImageColor3 = Color3.fromRGB(255, 255, 255)
-		end
-	end)
-	
-function Library:CustomNavigationSection(Name)
 
 	local ButtonHolder = Instance.new("ScrollingFrame", AstroniteScreenUI)
 	ButtonHolder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	ButtonHolder.BackgroundTransparency = 1.000
 	ButtonHolder.BorderSizePixel = 0
-	ButtonHolder.Name = Name
+	ButtonHolder.Name = "Section" .. Name
 	ButtonHolder.Position = UDim2.new(0.1601412, 0, 0.113084868, 0)
 	ButtonHolder.Size = UDim2.new(0, 543, 0, 284)
 	ButtonHolder.ScrollBarThickness = 0
@@ -134,10 +114,16 @@ function Library:CustomNavigationSection(Name)
 	ScrollingSupport.Position = UDim2.new(0.40791896, 0, 0, 0)
 	ScrollingSupport.Size = UDim2.new(0, 100, 0, 1)
 	
+	local NavigationOnClick = false
 	Navigation.MouseButton1Click:Connect(function()
+		NavigationOnClick = not NavigationOnClick
 		if NavigationOnClick then
+			Navigation.BackgroundColor3 = Color3.fromRGB(146, 226, 255)
+			Navigation.ImageColor3 = Color3.fromRGB(20, 20, 20)
 			ButtonHolder.Visible = true
 		else
+			Navigation.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
+			Navigation.ImageColor3 = Color3.fromRGB(255, 255, 255)
 			ButtonHolder.Visible = false
 		end
 	end)
@@ -477,7 +463,6 @@ function Library:Slider(todo)
 		end
 	end)
 	
-end
 end
 end
 end
