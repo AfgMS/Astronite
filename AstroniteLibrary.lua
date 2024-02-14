@@ -66,7 +66,6 @@ function Library:CreateImportantUI()
 	BlurVision.Size = 23
 	BlurVision.Enabled = false
 	
-	
 	game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessedEvent)
 		if input.KeyCode == Enum.KeyCode.V and not gameProcessedEvent then
 			Panel.Visible = not Panel.Visible
@@ -102,7 +101,8 @@ function Library:CreateNavigations(Name, Image)
 	ButtonHolder.Position = UDim2.new(0.1601412, 0, 0.113084868, 0)
 	ButtonHolder.Size = UDim2.new(0, 543, 0, 284)
 	ButtonHolder.ScrollBarThickness = 0
-
+	ButtonHolder.Visible = false
+	
 	local ButtonHolderList = Instance.new("UIListLayout", ButtonHolder)
 	ButtonHolderList.SortOrder = Enum.SortOrder.LayoutOrder
 	ButtonHolderList.Padding = UDim.new(0, 9)
