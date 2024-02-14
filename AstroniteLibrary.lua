@@ -95,13 +95,13 @@ function Library:CreateNavigations(Name, Image)
 
 	local ButtonHolder = Instance.new("ScrollingFrame", AstroniteScreenUI)
 	ButtonHolder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	ButtonHolder.BackgroundTransparency = 1.000
 	ButtonHolder.BorderSizePixel = 0
 	ButtonHolder.Name = "Section" .. Name
-	ButtonHolder.Position = UDim2.new(0.1601412, 0, 0.113084868, 0)
+	ButtonHolder.Position = UDim2.new(0.5, 0, 0.5, 0)
 	ButtonHolder.Size = UDim2.new(0, 543, 0, 284)
 	ButtonHolder.ScrollBarThickness = 0
 	ButtonHolder.Visible = false
+	ButtonHolder.AnchorPoint = Vector2.new(0.5, 0.5)
 	
 	local ButtonHolderList = Instance.new("UIListLayout", ButtonHolder)
 	ButtonHolderList.SortOrder = Enum.SortOrder.LayoutOrder
@@ -111,7 +111,7 @@ function Library:CreateNavigations(Name, Image)
 	ScrollingSupport.Name = "WeirdHolder"
 	ScrollingSupport.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	ScrollingSupport.BackgroundTransparency = 1.000
-	ScrollingSupport.Position = UDim2.new(0.40791896, 0, 0, 0)
+	ScrollingSupport.Position = UDim2.new(0, 0, 0, 0)
 	ScrollingSupport.Size = UDim2.new(0, 100, 0, 1)
 	
 	local NavigationOnClick = false
