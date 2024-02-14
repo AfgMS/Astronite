@@ -8,10 +8,10 @@ local CoreGui = game:GetService("CoreGui")
 local Library = {}
 
 --SomeFunction
-function Library:validate(defaults, options)
+function Library:validate(defaults, todo)
 	for i, v in pairs(defaults) do
-		if options[i] == nil then
-			options[i] = v
+		if todo[i] == nil then
+			todo[i] = v
 		end
 	end
 	return options
