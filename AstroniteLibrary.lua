@@ -107,6 +107,7 @@ function Library:CreateNavigations(Name, Image)
 		BlurVision.Enabled = not BlurVision.Enabled
 	if not ButtonHolder.Visible then
 		ButtonHolder.Visible = false
+			end
 		end
 	end)
 
