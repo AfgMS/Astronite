@@ -182,7 +182,7 @@ function Library:ToggleButton(todo)
 	ToggleButtonsTitle.TextScaled = true
 	ToggleButtonsTitle.TextSize = 14.000
 	ToggleButtonsTitle.TextWrapped = true
-	ToggleButtonsTitle.Text = todo.name
+	ToggleButtonsTitle.Text = todo.Name
 	ToggleButtonsTitle.TextXAlignment = Enum.TextXAlignment.Left
 
 	local ToggleButtonsTriggerHolder = Instance.new("Frame", ToggleButtonsHolder)
@@ -347,7 +347,7 @@ function Library:MiniToggle(todo)
 	MiniToggleTitle.Position = UDim2.new(0, 0, 0.0965517238, 0)
 	MiniToggleTitle.Size = UDim2.new(0, 108, 0, 13)
 	MiniToggleTitle.Font = Enum.Font.GothamMedium
-	MiniToggleTitle.Text = Name
+	MiniToggleTitle.Text = todo.Name
 	MiniToggleTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
 	MiniToggleTitle.TextScaled = true
 	MiniToggleTitle.TextSize = 14.000
@@ -412,7 +412,7 @@ function Library:Slider(todo)
 	SlidersTitle.Position = UDim2.new(0, 0, 0.503448248, 0)
 	SlidersTitle.Size = UDim2.new(0, 200, 0, 11)
 	SlidersTitle.Font = Enum.Font.GothamBold
-	SlidersTitle.Text = "Name of it"
+	SlidersTitle.Text = todo.Name
 	SlidersTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
 	SlidersTitle.TextScaled = true
 	SlidersTitle.TextSize = 14.000
