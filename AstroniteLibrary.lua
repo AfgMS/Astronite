@@ -73,11 +73,6 @@ function Library:CreateImportantUI()
 		end
 	end)
 	
-	MobileOpenUI.MouseButton1Click:Connect(function()
-		Panel.Visible = not Panel.Visible
-		BlurVision.Enabled = not BlurVision.Enabled
-	end)
-	
 function Library:CreateNavigations(Name, Image)
 
 	local Navigation = Instance.new("ImageButton", NavigationHolder)
@@ -93,7 +88,7 @@ function Library:CreateNavigations(Name, Image)
 	NavigationCorner.CornerRadius = UDim.new(1, 0)
 
 	local ButtonHolder = Instance.new("ScrollingFrame", AstroniteScreenUI)
-	ButtonHolder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ButtonHolder.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
 	ButtonHolder.BorderSizePixel = 0
 	ButtonHolder.Name = "Section" .. Name
 	ButtonHolder.Position = UDim2.new(0.5, 25, 0.5, 0)
@@ -113,6 +108,15 @@ function Library:CreateNavigations(Name, Image)
 	ScrollingSupport.Position = UDim2.new(0, 0, 0, 0)
 	ScrollingSupport.Size = UDim2.new(0, 100, 0, 1)
 	
+	MobileOpenUI.MouseButton1Click:Connect(function()
+		Panel.Visible = not Panel.Visible
+		BlurVision.Enabled = not BlurVision.Enabled
+	if not ButtonHolder.Visible then
+		ButtonHolder.Visible = false
+		end
+	end)
+
+		
 	local NavigationOnClick = false
 	Navigation.MouseButton1Click:Connect(function()
 		NavigationOnClick = not NavigationOnClick
