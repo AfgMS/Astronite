@@ -8,15 +8,14 @@ local CoreGui = game:GetService("CoreGui")
 local Library = {}
 
 --SomeFunction
-function Library:validate(defaults, todo)
+function Library:validate(defaults, options)
 	for i, v in pairs(defaults) do
-		if todo[i] == nil then
-			todo[i] = v
+		if options[i] == nil then
+			options[i] = v
 		end
 	end
-	return todo
+	return options
 end
-
 --UILibrary
 function Library:CreateImportantUI()
 
@@ -109,18 +108,17 @@ function Library:CreateImportantUI()
 			if not ButtonHolder.Visible then
 				ButtonHolder.Visible = false
 			end
-		end)
+	end)
 
-		game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessedEvent)
-			if input.KeyCode == Enum.KeyCode.V and not gameProcessedEvent then
-				Panel.Visible = not Panel.Visible
-				BlurVision.Enabled = not BlurVision.Enabled
-				if not ButtonHolder.Visible then
-					ButtonHolder.Visible = false
-				end
-			end
-		end)
-
+	game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessedEvent)
+	if input.KeyCode == Enum.KeyCode.V and not gameProcessedEvent then
+		Panel.Visible = not Panel.Visible
+		BlurVision.Enabled = not BlurVision.Enabled
+		if not ButtonHolder.Visible then
+			ButtonHolder.Visible = false
+		end
+	end
+	end)
 local NavigationOnClick = false
 Navigation.MouseButton1Click:Connect(function()
 	NavigationOnClick = not NavigationOnClick
@@ -137,7 +135,7 @@ end)
 
 function Library:ToggleButton(todo)
 	todo = Library:validate({
-		Name = "Unknown",
+		Name = "Nil",
 	}, todo or {})
 
 	local ToggleButton = {
@@ -252,8 +250,8 @@ function Library:ToggleButton(todo)
 
 		function Library:Dropdown(todo)
 			todo = Library:validate({
-				Name = "Unknown",
-				Default = "Unknown",
+				Name = "Nil",
+				Default = "Nil",
 				callback = function(selectedItem) end
 			}, todo or {})
 
@@ -327,7 +325,7 @@ function Library:ToggleButton(todo)
 
 			function Library:MiniToggle(todo)
 				todo = Library:validate({
-					Name = "Unknown",
+					Name = "Nil",
 					callback = function(enabled) end
 				}, todo or {})
 
@@ -390,7 +388,7 @@ function Library:ToggleButton(todo)
 
 				function Library:Slider(todo)
 					todo = Library:validate({
-						Name = "Unknown",
+						Name = "Nil",
 						min = nil,
 						max = nil,
 						callback = function(value) print(value) end
@@ -418,7 +416,7 @@ function Library:ToggleButton(todo)
 					SlidersHolder.Position = UDim2.new(0, 0, 0, 20)
 					SlidersHolder.Size = UDim2.new(todo.min / todo.max, 0, 1, 0)
 
-					local SlidersHolderCorner = Instance.new("UICorner",SlidersHolder)
+					local SlidersHolderCorner = Instance.new("UICorner",MiniToggleTriggerHolder)
 					SlidersHolderCorner.CornerRadius = 1.0
 
 					local SlidersFill = Instance.new("Frame", SlidersHolder)
