@@ -1,4 +1,4 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/AfgMS/Astronite/main/AstroniteLibrary.lua", true))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/AfgMS/Astronite/main/AstroniteUI.lua", true))()
 local CoreGui = game:WaitForChild("CoreGui")
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
@@ -22,7 +22,6 @@ local Testing1 = NavigationsTest1:ToggleButton({
         end
     end
 })
-local testing1section = Testing1:TextLabel("HelloCutie")
 local LibraryTesting = Testing1:Dropdown({
     Name = "HelloCutie",
     Default = "Heheha",
@@ -55,7 +54,6 @@ local Testing2 = NavigationsTest1:ToggleButton({
         end
     end
 })
-local testing2section = Testing2:TextLabel("HelloDude")
 local Phase2Test1 = NavigationsTest2:ToggleButton({
     Name = "Wassup",
     callback = function(enabled)
@@ -66,7 +64,6 @@ local Phase2Test1 = NavigationsTest2:ToggleButton({
         end
     end
 })
-local Phase2but1 = Phase2Test1:TextLabel("Im cming")
 local Phase2Test2 = NavigationsTest2:ToggleButton({
     Name = "Yno",
     callback = function(enabled)
@@ -77,4 +74,3 @@ local Phase2Test2 = NavigationsTest2:ToggleButton({
         end
     end
 })
-local Phase2but2 = Phase2Test2:TextLabel("kyah")
