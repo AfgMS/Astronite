@@ -118,20 +118,21 @@ function Library:CreateImportantUI()
 			ButtonHolder.Visible = false
 		end
 	end
-	end)
-local NavigationOnClick = false
-Navigation.MouseButton1Click:Connect(function()
-	NavigationOnClick = not NavigationOnClick
-	if NavigationOnClick then
-		Navigation.BackgroundColor3 = Color3.fromRGB(146, 226, 255)
-		Navigation.ImageColor3 = Color3.fromRGB(20, 20, 20)
-		ButtonHolder.Visible = true
-	else
-		Navigation.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
-		Navigation.ImageColor3 = Color3.fromRGB(255, 255, 255)
-		ButtonHolder.Visible = false
-	end
 end)
+		
+	local NavigationOnClick = false
+	Navigation.MouseButton1Click:Connect(function()
+		if NavigationOnClick then
+			Navigation.BackgroundColor3 = Color3.fromRGB(146, 226, 255)
+			Navigation.ImageColor3 = Color3.fromRGB(20, 20, 20)
+			ButtonHolder.Visible = true
+		else
+			Navigation.BackgroundColor3 = Color3.fromRGB(28, 28, 28)
+			Navigation.ImageColor3 = Color3.fromRGB(255, 255, 255)
+			ButtonHolder.Visible = false
+		end
+		NavigationOnClick = not NavigationOnClick
+	end)
 
 function Library:ToggleButton(todo)
 	todo = Library:validate({
