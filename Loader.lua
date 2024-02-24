@@ -5,8 +5,8 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local localPlayer = game.Players.LocalPlayer
 
 --Panel
-Library:CreateImportantUI()
+Library:CreateCore()
 
 --Navigation
-local NavigationsTest1 = Library:CreateNavigations("Gui", 12203817423)
-local NavigationsTest2 = Library:CreateNavigations("test", 12203817778)
+local NavigationsTest1 = Library:CreateTabs("Guay", 12203817423)
+local NavigationsTest2 = Library:CreateTabs("Six", 12203817778)
